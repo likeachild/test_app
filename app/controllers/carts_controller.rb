@@ -1,13 +1,19 @@
 class CartsController < ApplicationController
   before_filter :authenticate_user!
+  
+  
   # GET /carts
   # GET /carts.json
   def index
     @carts = Cart.all
 
     respond_to do |format|
+      if is_admin?
       format.html # index.html.erb
       format.json { render json: @carts }
+    else
+      format.html { redirect_to :root, notice: 'unauthorized' }
+    end
     end
   end
 

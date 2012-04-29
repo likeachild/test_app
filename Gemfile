@@ -9,6 +9,7 @@ gem 'devise'
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem 'execjs'
 gem 'therubyracer'
+gem 'fastercsv'
 
 group :production do
   gem 'pg'
